@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | Bài nộp | `submission.zip`, 1.918 câu, nộp 21/09/2026 07:54, ID 935934 |
-| Kết quả Private | **METEOR 0.6433** · ROUGE-L 0.511 |
+| Kết quả Private | **Hạng 2** · **METEOR 0.6433** · ROUGE-L 0.511 |
 | sha256 ZIP đã nộp | `dbb4a11b09552721d7e9f3590ad8263ffa60e77fac661a0016a7303f0588dcdc` (repo chỉ kèm sha256 từng đáp án ở `resources/reference_submission.sha256.json` để so sánh ở bước cuối) |
 | sha256 `submission.json` bên trong | `1ece1f973e1a04a2dc4dc89a2e31150b27a50d1dc3d61df040fd2ca19209c14a` |
 | Mô hình | 4 model zero-shot, **2.328.123.393 tham số** (58,2% trần 4 tỷ), đều trong danh mục BTC phê duyệt |
