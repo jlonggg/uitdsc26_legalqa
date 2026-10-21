@@ -1,0 +1,13 @@
+# Image "fusion" = môi trường đã dùng để sinh bài nộp (Python 3.8.10 / torch 2.4.1 cu121 / transformers 4.46.3 / sentence-transformers 3.2.1).
+# Dùng cho: nền v11 (segment, BM25, dense Vietnamese_Embedding, predict, tail, fix_header) + mọi bước CPU (catalog, ES, pool, RRF, compose).
+# build: docker build -t dsc26qa-fusion:v20 -f env/Dockerfile.fusion env
+FROM nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu20.04
+ENV DEBIAN_FRONTEND=noninteractive PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PIP_NO_CACHE_DIR=1 \
+    HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pip python3-dev build-essential zip \
+    && rm -rf /var/lib/apt/lists/* && ln -sf /usr/bin/python3 /usr/bin/python
+COPY requirements-fusion.txt /tmp/requirements.txt
+RUN python3 -m pip install --upgrade "pip<25" && \
+    python3 -m pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cu121 && \
+    python3 -m pip install -r /tmp/requirements.txt
+WORKDIR /repo

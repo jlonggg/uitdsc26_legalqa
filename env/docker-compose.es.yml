@@ -1,0 +1,17 @@
+# Elasticsearch 7.17.0 (đúng bản đã dùng). Cổng host = ES_PORT (mặc định 9211). Script tự bật khi cần.
+# Tắt sau khi chạy xong: ES_PORT=<cổng> docker compose -f env/docker-compose.es.yml down -v
+services:
+  es:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.0
+    container_name: dsc26qa_es
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: "false"
+      ES_JAVA_OPTS: -Xms4g -Xmx4g
+      cluster.routing.allocation.disk.threshold_enabled: "false"
+    ports:
+      - "127.0.0.1:${ES_PORT:-9211}:9200"
+    volumes:
+      - dsc26qa_es:/usr/share/elasticsearch/data
+volumes:
+  dsc26qa_es:

@@ -1,0 +1,7 @@
+/data
+/models
+/work
+/work_*/
+/artifacts/
+__pycache__/
+*.pyc

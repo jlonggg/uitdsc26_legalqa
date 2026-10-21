@@ -1,0 +1,9 @@
+# Image "gpu" = môi trường đã chạy các bước Qwen3-Embedding, cross-encoder của pool Jina và Jina khi sinh bài nộp
+# (Python 3.11.9 / torch 2.4.1+cu121 / transformers 4.53.2; phiên bản đo bằng pip freeze 29/09/2026).
+# build: docker build -t dsc26qa-gpu:v20 -f env/Dockerfile.gpu env
+FROM pytorch/pytorch:2.4.1-cuda12.1-cudnn9-runtime
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PIP_NO_CACHE_DIR=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
+    PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python TOKENIZERS_PARALLELISM=false
+COPY requirements-gpu.txt /tmp/requirements.txt
+RUN python -m pip install -r /tmp/requirements.txt
+WORKDIR /repo
