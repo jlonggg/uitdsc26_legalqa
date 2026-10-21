@@ -66,6 +66,8 @@ Script này đếm tham số từ header `.safetensors`, đối chiếu danh m�
 
 ```
 README.md                 tài liệu này
+DSC2026_Task2_LegalQA_Data_Overview.docx.pdf   mô tả bài toán và dữ liệu của BTC
+Scoring-Program-LegalQA.zip                    chương trình chấm của BTC (METEOR + ROUGE-L)
 download_models.sh        tải 4 model đúng revision về models/ rồi kiểm sha256 + số tham số
 run_from_scratch.sh       chạy toàn bộ pipeline từ số 0 (mục 4)
 verify.py                 kiểm định dạng BTC và đếm câu khác so với bài đã nộp qua sha256 từng đáp án (chỉ cần Python 3)
