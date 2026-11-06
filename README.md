@@ -1,5 +1,7 @@
 # UIT - Kitchen — DSC 2026 Task 2 (LegalQA): mã nguồn tái lập kết quả Private Test
 
+<p align="center"><img src="./legalqa-banner.svg" width="100%" alt="Legal QA"></p>
+
 | | |
 |---|---|
 | Bài nộp | `submission.zip`, 1.918 câu, nộp 21/09/2026 07:54, ID 935934 |
